@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hexagon Cafe Elite</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  background:#0a0a0a;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* LOADER */
+#loader{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+#loader h1{
+  color:#ff9800;
+  animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+  0%{opacity:0.3;}
+  50%{opacity:1;}
+  100%{opacity:0.3;}
+}
+
+/* CURSOR */
+.cursor{
+  width:15px;
+  height:15px;
+  border:2px solid #ff9800;
+  position:fixed;
+  border-radius:50%;
+  pointer-events:none;
+  transition:0.1s;
+  z-index:999;
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 50px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+nav h2{
+  color:#ff9800;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+  url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085');
+  background-size:cover;
+  background-position:center;
+}
+
+.hero h1{
+  font-size:60px;
+  color:#ff9800;
+}
+
+.hero p{
+  margin-top:10px;
+  font-size:20px;
+}
+
+/* BUTTON */
+.btn{
+  margin-top:20px;
+  padding:12px 30px;
+  background:linear-gradient(45deg,#ff9800,#ff5722);
+  border:none;
+  cursor:pointer;
+  color:white;
+  border-radius:5px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+/* SECTION */
+section{
+  padding:80px 50px;
+  text-align:center;
+}
+
+/* MENU */
+.menu{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  margin-top:30px;
+}
+
+.card{
+  background:#111;
+  padding:20px;
+  border-radius:15px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.05);
+  background:#1a1a1a;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  padding:15px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+  color:white;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:20px;
+  text-align:center;
+  color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<div id="loader"><h1>Loading...</h1></div>
+
+<div class="cursor" id="cursor"></div>
+
+<nav>
+  <h2>Hexagon Cafe</h2>
+</nav>
+
+<div class="hero">
+  <h1>Hexagon Cafe & Restro</h1>
+  <p>Elite Dining Experience in Butwal</p>
+  <button class="btn">Order Now</button>
+</div>
+
+<section>
+  <h2>Popular Items</h2>
+  <div class="menu">
+    <div class="card">Chowmein - Rs.50</div>
+    <div class="card">Momo - Rs.120</div>
+    <div class="card">Burger - Rs.150</div>
+    <div class="card">Coffee - Rs.100</div>
+  </div>
+</section>
+
+<section>
+  <h2>Order / Book Now</h2>
+  <p>Click below to order directly via WhatsApp</p>
+  <a href="https://wa.me/9779767002222">
+    <button class="btn">Order on WhatsApp</button>
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 Hexagon Cafe & Restro | Premium Experience</p>
+</footer>
+
+<a href="https://wa.me/9779767002222" class="whatsapp">💬</a>
+
+<script>
+window.addEventListener("load",()=>{
+  document.getElementById("loader").style.display="none";
+});
+
+const cursor = document.getElementById("cursor");
+
+document.addEventListener("mousemove", e=>{
+  cursor.style.top = e.clientY + "px";
+  cursor.style.left = e.clientX + "px";
+});
+</script>
+
+</body>
+</html>
